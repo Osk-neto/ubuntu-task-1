@@ -1,0 +1,37 @@
+.nav-links{
+    height: 0;
+    overflow: hidden;    
+}
+.nav-link{
+    
+    list-style: none;
+    margin: 20px 0;
+    border-bottom: 2px solid white;
+    width: 100%;
+}
+.nav-open{
+    height: 25vh;
+    padding-right: 40px;
+    
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+@media only screen and (min-width:920px){
+    
+    .nav-links{
+        height: auto;
+    }
+    ul{
+        display: flex;
+        gap: 100px;
+        text-align: center;
+    }
+    .nav-link{
+        font-size: 1.7rem;
+        border-bottom: none;
+        
+    }
+}
