@@ -1,4 +1,5 @@
 .signUp-form{
+    margin-top: 60px;
     display: grid;
     text-align: left;
     
@@ -21,12 +22,17 @@
     
 }
 .signUp-form form button{
-    width: 40%;
-    margin: auto;
+    width: 60%;
+    margin:10px auto;
+    border-radius: 10px;
 }
 .errorMessage{
     color: red;
 
+}
+.grid-helper{
+    display: grid;
+    gap: 5px;
 }
 
 @media only screen and (min-width:920px){
@@ -36,7 +42,7 @@
         
     }
     .signUp-form form button{
-        width: 20%;
+        width: 40%;
         margin-top: 20px;
         border-radius: 10px;
     }

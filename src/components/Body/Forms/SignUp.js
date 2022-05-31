@@ -1,12 +1,14 @@
+
 import './SignUp.css';
 import {useFormik } from 'formik';
-
+import SignUpInput from './SignUpInput';
 function SignUp(){
     
     const validate = values =>{
         const errors ={}
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         const phoneRegex = /^\(?\d{2}\)?[\s-]?[\s9]?\d{4}-?\d{4}$/i;
+        const ageRegex = /^[0-9]*$/i;
         if(!values.user){
             errors.user = 'Required'
         }
@@ -25,8 +27,10 @@ function SignUp(){
 
         if(!values.age){
             errors.age = 'Required'
-        }else if(values.age > 120){
-            errors.age = 'You are not that old'
+        }else if(!ageRegex.test(values.age)){
+            errors.age = 'Must to be a number'
+        }else if(values.age>100){
+          errors.age = 'Please insert a age less then 100 years'
         }
 
         if(!values.phone){
@@ -70,34 +74,78 @@ function SignUp(){
     return <div className='signUp-form'>
         <h2>Registro</h2>
         <form onSubmit={formik.handleSubmit}>
-            <label htmlFor='user'>Usuário</label>
-            <input id='user' name='user' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.user}/>
-            {formik.errors.user && formik.touched.user ? <div className='errorMessage'>{formik.errors.user}</div> : null}
-
-            <label htmlFor='email'>Email</label>
-            <input id='email' name='email' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email}/>
-            {formik.errors.email && formik.touched.email ? <div className='errorMessage'>{formik.errors.email}</div> : null}
-
-            <label htmlFor='fullName'>Nome Completo</label>
-            <input id='fullName' name='fullName' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.fullName}/>
-            {formik.errors.fullName && formik.touched.fullName ? <div className='errorMessage'>{formik.errors.fullName}</div> : null}
-
-            <label htmlFor='age'>Idade</label>
-            <input id='age' name='age' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.age}/>
-            {formik.errors.age && formik.touched.age ? <div className='errorMessage'>{formik.errors.age}</div> : null}
-
-            <label htmlFor='phone'>Tefefone - xx-xxxx-xxxx</label>
-            <input id='phone' name='phone' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.phone}/>
-            {formik.errors.phone && formik.touched.phone ? <div className='errorMessage'>{formik.errors.phone}</div> : null}
-
-            <label htmlFor='password'>Senha</label>
-            <input id='password' name='password' type='password' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password}/>
-            {formik.errors.password && formik.touched.password ? <div className='errorMessage'>{formik.errors.password}</div> : null}
-
-            <label htmlFor='passwordConfirm'>Confirmação de senha</label>
-            <input id='passwordConfirm' name='passwordConfirm' type='password' onChange={formik.handleChange} value={formik.values.passwordConfirm}/>
-            {formik.errors.passwordConfirm && formik.touched.passwordConfirm ? <div className='errorMessage'>{formik.errors.passwordConfirm}</div> : null}
-
+            
+            <SignUpInput 
+              id='user'
+              name='user'
+              label='Usuario'
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.user}
+              formikErrors={formik.errors.user}
+              formikTouched={formik.touched.user}
+            />
+            
+            <SignUpInput 
+              id='email'
+              name='email'
+              label='Email'
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+              formikErrors={formik.errors.email}
+              formikTouched={formik.touched.email}
+            />
+            <SignUpInput 
+              id='fullName'
+              name='fullName'
+              label='Nome Completo'
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.fullName}
+              formikErrors={formik.errors.fullName}
+              formikTouched={formik.touched.fullName}
+            />
+            <SignUpInput 
+              id='age'
+              name='age'
+              label='Idade'
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.age}
+              formikErrors={formik.errors.age}
+              formikTouched={formik.touched.age}
+            />
+            <SignUpInput 
+              id='phone'
+              name='phone'
+              label='Telefone'
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.phone}
+              formikErrors={formik.errors.phone}
+              formikTouched={formik.touched.phone}
+            />
+            <SignUpInput 
+              id='password'
+              name='password'
+              label='Senha'
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.password}
+              formikErrors={formik.errors.password}
+              formikTouched={formik.touched.password}
+            />
+            <SignUpInput 
+              id='passwordConfirm'
+              name='passwordConfirm'
+              label='Confirmacao de senha'
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.passwordConfirm}
+              formikErrors={formik.errors.passwordConfirm}
+              formikTouched={formik.touched.passwordConfirm}
+            />
             <button type='submit'>Register</button>
         </form>
     </div>
