@@ -61,9 +61,9 @@ function SignUp(){
             passwordConfirm:''
         },
         validate,
-        onSubmit: values=>{
+        onSubmit: (values,{resetForm})=>{
             alert(JSON.stringify(values,null,2));
-            
+            resetForm({values: ''});
         }
     });
 
