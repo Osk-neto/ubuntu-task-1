@@ -4,7 +4,7 @@ function Footer(){
     return <footer className='footer'>
         <div className='footer-flex'>
             <h2>Oscar Ubuntu</h2>
-            <img src={logo}/>
+            <img src={logo} alt='logo'/>
         </div>
         <p>© Copyright 2022 Oscar Ubuntu</p>
     </footer>
