@@ -1,0 +1,42 @@
+.signUp-form{
+    display: grid;
+    text-align: left;
+    
+}
+.signUp-form h2{
+    margin: auto;
+    margin-bottom: 20px;
+    
+}
+.signUp-form form{
+    display: grid;
+    width: 60%;
+    margin: auto;
+    
+}
+.signUp-form form input{
+    border: 1px solid darkgray;
+    border-radius: 15px;
+    height: 20px;
+    
+}
+.signUp-form form button{
+    width: 40%;
+    margin: auto;
+}
+.errorMessage{
+    color: red;
+
+}
+
+@media only screen and (min-width:920px){
+    .signUp-form form{
+        
+        width: 40%;
+        
+    }
+    .signUp-form form button{
+        width: 20%;
+        margin-top: 20px;
+    }
+}
