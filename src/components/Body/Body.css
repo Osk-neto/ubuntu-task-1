@@ -8,6 +8,7 @@ section{
 .header-img img{
     width: 100%;
 }
+
 .body-text{
     margin: auto;
     text-align: justify;
@@ -17,5 +18,12 @@ section{
 @media only screen and (min-width:920px){
     .header-img img{
         width: 60%;
+    }
+    .content-section{
+        display: flex;
+        width: 100%;
+    }
+    .body-text{
+        width: 40%;
     }
 }

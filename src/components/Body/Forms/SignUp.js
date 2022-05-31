@@ -71,32 +71,32 @@ function SignUp(){
         <h2>Registro</h2>
         <form onSubmit={formik.handleSubmit}>
             <label htmlFor='user'>Usuário</label>
-            <input id='user' name='user' onChange={formik.handleChange} value={formik.values.user}/>
-            {formik.errors.user ? <div className='errorMessage'>{formik.errors.user}</div> : null}
+            <input id='user' name='user' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.user}/>
+            {formik.errors.user && formik.touched.user ? <div className='errorMessage'>{formik.errors.user}</div> : null}
 
             <label htmlFor='email'>Email</label>
-            <input id='email' name='email' onChange={formik.handleChange} value={formik.values.email}/>
-            {formik.errors.email ? <div className='errorMessage'>{formik.errors.email}</div> : null}
+            <input id='email' name='email' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email}/>
+            {formik.errors.email && formik.touched.email ? <div className='errorMessage'>{formik.errors.email}</div> : null}
 
             <label htmlFor='fullName'>Nome Completo</label>
-            <input id='fullName' name='fullName' onChange={formik.handleChange} value={formik.values.fullName}/>
-            {formik.errors.fullName ? <div className='errorMessage'>{formik.errors.fullName}</div> : null}
+            <input id='fullName' name='fullName' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.fullName}/>
+            {formik.errors.fullName && formik.touched.fullName ? <div className='errorMessage'>{formik.errors.fullName}</div> : null}
 
             <label htmlFor='age'>Idade</label>
-            <input id='age' name='age' onChange={formik.handleChange} value={formik.values.age}/>
-            {formik.errors.age ? <div className='errorMessage'>{formik.errors.age}</div> : null}
+            <input id='age' name='age' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.age}/>
+            {formik.errors.age && formik.touched.age ? <div className='errorMessage'>{formik.errors.age}</div> : null}
 
             <label htmlFor='phone'>Tefefone - xx-xxxx-xxxx</label>
-            <input id='phone' name='phone' onChange={formik.handleChange} value={formik.values.phone}/>
-            {formik.errors.phone ? <div className='errorMessage'>{formik.errors.phone}</div> : null}
+            <input id='phone' name='phone' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.phone}/>
+            {formik.errors.phone && formik.touched.phone ? <div className='errorMessage'>{formik.errors.phone}</div> : null}
 
             <label htmlFor='password'>Senha</label>
-            <input id='password' name='password' type='password' onChange={formik.handleChange} value={formik.values.password}/>
-            {formik.errors.password ? <div className='errorMessage'>{formik.errors.password}</div> : null}
+            <input id='password' name='password' type='password' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password}/>
+            {formik.errors.password && formik.touched.password ? <div className='errorMessage'>{formik.errors.password}</div> : null}
 
             <label htmlFor='passwordConfirm'>Confirmação de senha</label>
             <input id='passwordConfirm' name='passwordConfirm' type='password' onChange={formik.handleChange} value={formik.values.passwordConfirm}/>
-            {formik.errors.passwordConfirm ? <div className='errorMessage'>{formik.errors.passwordConfirm}</div> : null}
+            {formik.errors.passwordConfirm && formik.touched.passwordConfirm ? <div className='errorMessage'>{formik.errors.passwordConfirm}</div> : null}
 
             <button type='submit'>Register</button>
         </form>

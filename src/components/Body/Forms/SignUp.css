@@ -30,13 +30,14 @@
 }
 
 @media only screen and (min-width:920px){
-    .signUp-form form{
+    .signUp-form {
         
-        width: 40%;
+        width: 50%;
         
     }
     .signUp-form form button{
         width: 20%;
         margin-top: 20px;
+        border-radius: 10px;
     }
 }
