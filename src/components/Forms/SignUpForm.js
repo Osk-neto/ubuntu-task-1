@@ -2,7 +2,7 @@
 import './SignUp.css';
 import {useFormik } from 'formik';
 import SignUpInput from './SignUpInput';
-function SignUp(){
+function SignUpForm(){
     
     const validate = values =>{
         const errors ={}
@@ -153,4 +153,4 @@ function SignUp(){
     
 }
 
-export default SignUp;
+export default SignUpForm;

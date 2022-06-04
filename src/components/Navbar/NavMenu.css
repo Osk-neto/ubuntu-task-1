@@ -24,7 +24,7 @@ a{
     .nav-links{
         height: auto;
     }
-    ul{
+    .nav-links ul{
         display: flex;
         gap: 100px;
         text-align: center;

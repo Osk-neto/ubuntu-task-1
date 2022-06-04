@@ -1,0 +1,10 @@
+.contact-section{
+    display: grid;
+    justify-content: center;
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+.contact-section ul{
+    display: grid;
+    justify-content: center;
+}

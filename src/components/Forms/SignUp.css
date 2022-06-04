@@ -1,6 +1,8 @@
 .signUp-form{
-    margin-top: 60px;
+    padding-top: 150px;
+    padding-bottom: 50px;
     display: grid;
+    justify-content: center;
     text-align: left;
     
 }
@@ -11,7 +13,7 @@
 }
 .signUp-form form{
     display: grid;
-    width: 60%;
+    width: 300px;
     margin: auto;
     
 }
@@ -36,9 +38,9 @@
 }
 
 @media only screen and (min-width:920px){
-    .signUp-form {
+    .signUp-form form {
         
-        width: 50%;
+        width: 400px;
         
     }
     .signUp-form form button{
