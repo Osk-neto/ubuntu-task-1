@@ -1,51 +1,44 @@
-.signUp-form{
-    padding-top: 150px;
-    padding-bottom: 50px;
-    display: grid;
-    justify-content: center;
-    text-align: left;
-    
+.signUp-form {
+  padding-top: 150px;
+  padding-bottom: 50px;
+  display: grid;
+  justify-content: center;
+  text-align: left;
 }
-.signUp-form h2{
-    margin: auto;
-    margin-bottom: 20px;
-    
+.signUp-form h2 {
+  margin: auto;
+  margin-bottom: 20px;
 }
-.signUp-form form{
-    display: grid;
-    width: 300px;
-    margin: auto;
-    
+.signUp-form form {
+  display: grid;
+  width: 300px;
+  margin: auto;
 }
-.signUp-form form input{
-    border: 1px solid darkgray;
-    border-radius: 15px;
-    height: 20px;
-    
+.signUp-form form input {
+  border: 1px solid darkgray;
+  border-radius: 15px;
+  height: 20px;
 }
-.signUp-form form button{
-    width: 60%;
-    margin:10px auto;
+.signUp-form form button {
+  width: 60%;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+.errorMessage {
+  color: red;
+}
+.grid-helper {
+  display: grid;
+  gap: 5px;
+}
+
+@media only screen and (min-width: 920px) {
+  .signUp-form form {
+    width: 400px;
+  }
+  .signUp-form form button {
+    width: 40%;
+    margin-top: 20px;
     border-radius: 10px;
-}
-.errorMessage{
-    color: red;
-
-}
-.grid-helper{
-    display: grid;
-    gap: 5px;
-}
-
-@media only screen and (min-width:920px){
-    .signUp-form form {
-        
-        width: 400px;
-        
-    }
-    .signUp-form form button{
-        width: 40%;
-        margin-top: 20px;
-        border-radius: 10px;
-    }
+  }
 }
