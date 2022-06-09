@@ -15,6 +15,9 @@ function NavMenu() {
           <Link to="/Contador">Contador</Link>
         </li>
         <li className="nav-link">
+          <Link to="/Weather">Weather</Link>
+        </li>
+        <li className="nav-link">
           <Link to="/SignUp">SignUp</Link>
         </li>
       </ul>

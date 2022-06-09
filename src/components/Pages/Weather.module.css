@@ -1,0 +1,19 @@
+.previsaoSection {
+  display: grid;
+  justify-content: center;
+  padding-top: 150px;
+  text-align: center;
+  margin: auto;
+}
+.previsaoSection h1 {
+  width: 90%;
+}
+.previsaoSection select {
+  width: 300px;
+  height: 30px;
+  margin: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #ddd;
+  margin-top: 20px;
+}
