@@ -7,8 +7,8 @@ function ForecastTables(props) {
   }
   return (
     <div className={classes.forecastSection}>
-      {newForecast.map((forecast) => (
-        <table className={classes.table}>
+      {newForecast.map((forecast, index) => (
+        <table className={classes.table} key={index}>
           <tbody>
             <tr>
               <td>Data</td>
