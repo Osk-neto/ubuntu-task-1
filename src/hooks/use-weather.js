@@ -2,13 +2,16 @@ import axios from "axios";
 const getWeather = async (cityName) => {
   if (cityName === null || cityName === "") {
     return;
-  } else {
+  }
+  try {
     const weather = await axios.get("/weather", {
       params: {
         cityName: cityName,
       },
     });
     return weather.data;
+  } catch (err) {
+    return err.message;
   }
 };
 
