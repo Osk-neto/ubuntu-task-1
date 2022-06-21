@@ -1,38 +1,16 @@
-import { Fragment, useRef } from "react";
-import useWeather from "../../hooks/use-weather";
+import { useRef } from "react";
+import useWeather from "../../hooks/useWeather";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
-import ForecastTables from "../UI/ForecastTables";
-import WeatherTable from "../UI/WeatherTable";
-import { ReactComponent as Loading } from "../../assets/Loading.svg";
 import classes from "./Weather.module.css";
 
 const Weather = () => {
   const selectedCity = useRef();
-  const { weather, isLoading, error, setCity } = useWeather();
+  const { weather, setCity } = useWeather();
 
   const City = require("country-state-city").City;
   const brazilianCities = City.getCitiesOfCountry("BR");
   const cityHandler = () => setCity(selectedCity.current.value);
-  let content;
-  if (weather) {
-    content = (
-      <Fragment>
-        <WeatherTable
-          city={weather.city_name}
-          date={weather.date}
-          time={weather.time}
-          temperature={weather.temp}
-          description={weather.description}
-        />
-        <ForecastTables forecasts={weather.forecast} />
-      </Fragment>
-    );
-  }
-  if (isLoading) {
-    content = <Loading />;
-  }
-  if (error) content = <h2>{error}</h2>;
 
   return (
     <div>
@@ -45,7 +23,7 @@ const Weather = () => {
             <option key={index}>{city.name}</option>
           ))}
         </select>
-        <div className={classes.previsao}>{content}</div>
+        <div className={classes.previsao}>{weather}</div>
       </div>
       <Footer />
     </div>
